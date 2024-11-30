@@ -26,7 +26,7 @@ const sections = {
 const Resume = () => (
   <Main
     title="Resume"
-    description="Michael D'Angelo's Resume. Smile Identity, Arthena, Matroid, YC, Skeptical Investments, Stanford ICME, Planet, and Facebook."
+    description="Piyush Sukhija's Resume. Piyush Sukhija's Curriculum Vitae. Piyush Sukhija's CV."
   >
     <article className="post" id="resume">
       <header>
