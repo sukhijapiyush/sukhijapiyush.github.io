@@ -1,15 +1,27 @@
 const degrees = [
   {
-    school: 'Stanford University',
-    degree: 'M.S. Computational and Mathematical Engineering',
-    link: 'https://stanford.edu',
-    year: 2016,
+    school: 'Liverpool John Moores University',
+    degree: 'Master of Science - MS (Machine Learning and Artificial Intelligence)',
+    link: 'https://www.ljmu.ac.uk/',
+    year: 2023,
   },
   {
-    school: 'University at Buffalo',
-    degree: 'B.S. Electrical Engineering, Computer Engineering',
-    link: 'https://buffalo.edu',
-    year: 2012,
+    school: 'International Institute of Information Technology Bangalore',
+    degree: 'Post Graduate Diploma (Machine Learning and Artificial Intelligence)',
+    link: 'https://www.iiitb.ac.in/',
+    year: 2023,
+  },
+  {
+    school: "Bharati Vidyapeeth's College of Engineering",
+    degree: 'Bachelor of Technology - BTech - Computer Science',
+    link: 'https://bvcoend.ac.in/',
+    year: 2019,
+  },
+  {
+    school: 'Kendriya vidyalaya',
+    degree: 'Senior Secondary Education',
+    link: 'https://kvsangathan.nic.in/',
+    year: 2015,
   },
 ];
 
