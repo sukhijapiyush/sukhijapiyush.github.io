@@ -412,37 +412,30 @@
         <div>
           <h3 class="text-xl font-bold mb-4 text-primary">2. Semantic Enterprise Discovery Platform</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-6"><strong>The Challenge:</strong> Legacy keyword search
-            ("Ctrl+F") was causing audit bottlenecks. I led the transition to a modern NLP search architecture that
-            understands context and domain-specific enterprise terminology.</p>
+            in Apache SOLR was causing audit bottlenecks. I built a Custom UI and an NLP engine that pulls data from
+            SOLR and layers contextual understanding over it for semantic retrieval.</p>
 
           <div
             class="flex flex-col items-center space-y-3 text-xs font-semibold text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
-            <div class="flex justify-between w-full max-w-sm space-x-2">
-              <div class="flex items-center justify-center bg-white dark:bg-gray-800 px-2 py-2 rounded-lg border w-1/2">
-                <i class="fas fa-file-pdf text-red-500 mr-2"></i> Audit Docs</div>
-              <div class="flex items-center justify-center bg-white dark:bg-gray-800 px-2 py-2 rounded-lg border w-1/2">
-                <i class="fas fa-envelope text-yellow-500 mr-2"></i> Communications</div>
-            </div>
-            <i class="fas fa-arrow-down text-gray-400"></i>
-            <div
-              class="flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg border border-blue-300 dark:border-blue-700 w-full max-w-sm">
-              <i class="fas fa-cogs mr-2"></i> NLP Pre-Processing (SpaCy & RegEx)</div>
-            <i class="fas fa-arrow-down text-gray-400"></i>
             <div
               class="flex items-center justify-center bg-white dark:bg-gray-800 px-4 py-2 rounded-lg border w-full max-w-sm">
-              <i class="fas fa-wave-square text-purple-500 mr-2"></i> Doc2Vec Embeddings Generation</div>
+              <i class="fas fa-desktop text-blue-500 mr-2"></i> Custom Search UI (User Query)</div>
+            <i class="fas fa-arrow-down text-gray-400"></i>
+            <div
+              class="flex items-center justify-center bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-lg border border-purple-300 dark:border-purple-700 w-full max-w-sm">
+              <i class="fas fa-brain mr-2"></i> NLP Context Engine (Doc2Vec / SpaCy)</div>
             <i class="fas fa-arrow-down text-gray-400"></i>
             <div
               class="flex items-center justify-center bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-lg border border-emerald-300 dark:border-emerald-700 w-full max-w-sm">
-              <i class="fas fa-search mr-2"></i> Apache SOLR (Semantic Retrieval)</div>
+              <i class="fas fa-database mr-2"></i> Pulls data from Apache SOLR (Legacy Database)</div>
           </div>
         </div>
 
         <div class="mt-6 space-y-3 text-sm">
           <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
-            <strong class="text-blue-700 dark:text-blue-400">💡 Insight Learned:</strong> Fine-tuning specialized
-            embedding models (Doc2Vec) on proprietary enterprise data drastically outperformed generic models in
-            capturing highly technical jargon.
+            <strong class="text-blue-700 dark:text-blue-400">💡 Insight Learned:</strong> Enhancing an existing system
+            (SOLR) with an NLP wrapper is often far more cost-effective and scalable than completely ripping and
+            replacing legacy infrastructure.
           </div>
           <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg border-l-4 border-emerald-500">
             <strong class="text-emerald-700 dark:text-emerald-400"><i class="fas fa-chart-line mr-1"></i> Business
