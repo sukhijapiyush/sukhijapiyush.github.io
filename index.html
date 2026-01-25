@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piyush Sukhija</title>
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+  <meta property="og:title" content="Piyush Sukhija - Lead Data Scientist">
+  <meta property="og:description"
+    content="GenAI, NLP, and Predictive Modeling expert. Helping enterprises bridge the gap between LLM research and commercial viability.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sukhijapiyush.github.io/portfolio">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DNWN96BFX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5DNWN96BFX');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            primary: '#3b82f6', // blue-500
+            secondary: '#10b981', // emerald-500
+            darkbg: '#0f172a', // slate-900
+            carddark: '#1e293b', // slate-800
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #475569;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+
+    /* Waving Hand Animation */
+    @keyframes wave {
+      0% {
+        transform: rotate(0.0deg)
+      }
+
+      10% {
+        transform: rotate(14.0deg)
+      }
+
+      20% {
+        transform: rotate(-8.0deg)
+      }
+
+      30% {
+        transform: rotate(14.0deg)
+      }
+
+      40% {
+        transform: rotate(-4.0deg)
+      }
+
+      50% {
+        transform: rotate(10.0deg)
+      }
+
+      60% {
+        transform: rotate(0.0deg)
+      }
+
+      100% {
+        transform: rotate(0.0deg)
+      }
+    }
+
+    .wave-emoji {
+      display: inline-block;
+      transform-origin: 70% 70%;
+      animation: wave 2.5s infinite;
+    }
+
+    /* Continuous Scroll Animation for Ribbon */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll {
+      display: inline-flex;
+      animation: scroll 20s linear infinite;
+    }
+
+    /* PDF GENERATION STYLES */
+    .pdf-page-break-avoid {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    /* Force AOS elements to be visible in PDF snapshot */
+    body.pdf-export [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      visibility: visible !important;
+    }
+
+    /* Hide unwanted UI elements during snapshot */
+    body.pdf-export .no-print {
+      display: none !important;
+    }
+
+    /* Reveal print-friendly URL text in PDF */
+    .print-url {
+      display: none;
+    }
+
+    body.pdf-export .print-url {
+      display: inline !important;
+    }
+
+    body.pdf-export .no-print-text {
+      display: none !important;
+    }
+
+    /* Reset paddings for clean PDF margins */
+    body.pdf-export #hero {
+      min-height: auto !important;
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
+    }
+
+    body.pdf-export section {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+      margin-bottom: 0 !important;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-gray-50 text-slate-800 dark:bg-darkbg dark:text-gray-100 transition-colors duration-300 antialiased font-sans">
+
+  <nav
+    class="no-print fixed w-full z-50 bg-white/80 dark:bg-darkbg/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-heading font-bold text-xl tracking-tight text-gray-900 dark:text-white">Piyush<span
+          class="text-secondary">.</span></a>
+
+      <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+        <a href="#about" class="hover:text-primary transition">About</a>
+        <a href="#skills" class="hover:text-primary transition">Skills</a>
+        <a href="#architecture" class="hover:text-primary transition">Architecture</a>
+        <a href="#experience" class="hover:text-primary transition">Experience</a>
+        <a href="#education" class="hover:text-primary transition">Education</a>
+        <a href="#thought-leadership" class="hover:text-primary transition">Thought Leadership</a>
+        <a href="#next-steps" class="hover:text-primary transition font-bold">Contact</a>
+      </div>
+
+      <button id="theme-toggle"
+        class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition">
+        <i id="theme-icon" class="fas fa-moon text-gray-800 dark:text-yellow-400"></i>
+      </button>
+    </div>
+  </nav>
+
+  <section id="hero" class="min-h-screen flex items-center justify-center pt-16 px-6 relative overflow-hidden">
+    <div
+      class="no-print absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">
+    </div>
+    <div
+      class="no-print absolute bottom-20 right-10 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10" data-aos="fade-up" data-aos-duration="1000">
+      <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        Hi, I'm <span id="name-gradient"
+          class="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">Piyush.</span> <span
+          class="wave-emoji no-print">👋</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4 font-light">
+        I'm a Data Scientist who builds smart, human-centered AI systems.
+      </p>
+      <p class="text-md text-gray-500 dark:text-gray-500 max-w-2xl mx-auto mb-10">
+        Currently working as a <strong>Lead Data Scientist</strong> at EXL, I help bridge the gap between cutting-edge
+        LLM research and real-world commercial viability.
+      </p>
+
+      <div class="no-print flex flex-wrap items-center justify-center gap-4">
+        <a href="#about"
+          class="px-8 py-3 rounded-lg bg-primary hover:bg-blue-600 text-white font-medium shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-1">Get
+          to know me</a>
+
+        <button
+          class="download-resume-btn px-8 py-3 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 font-medium transition flex items-center shadow-md transform hover:-translate-y-1 cursor-pointer">
+          <i id="pdf-icon" class="fas fa-file-pdf mr-2 text-red-500"></i> <span id="pdf-text">Download Resume</span>
+        </button>
+
+        <div class="flex gap-4 ml-2">
+          <a href="https://linkedin.com/in/piyushsukhija" target="_blank"
+            class="p-3 bg-gray-200 dark:bg-gray-800 hover:text-primary rounded-lg transition"><i
+              class="fab fa-linkedin-in text-xl"></i></a>
+          <a href="http://github.com/sukhijapiyush" target="_blank"
+            class="p-3 bg-gray-200 dark:bg-gray-800 hover:text-primary rounded-lg transition"><i
+              class="fab fa-github text-xl"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-20 px-6 pdf-page-break-avoid">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">Enterprise Data Science</h2>
+        <div class="space-y-4 text-gray-600 dark:text-gray-300 text-lg">
+          <p>I specialize in transitioning enterprise operations from isolated ML models to scalable <strong>"Compound
+              AI Systems."</strong> My expertise combines technical execution in Generative AI, NLP, and Predictive
+            Modeling with the leadership required to translate probabilistic risk into business strategy.</p>
+          <p>With 6 years of experience, I excel at solving the "Privacy-Utility" paradox—building Sovereign AI
+            architectures for regulated industries and automating complex decision-making to drive sustained revenue
+            growth.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+        <div class="p-6 bg-white dark:bg-carddark rounded-xl shadow-lg border border-gray-100 dark:border-gray-800">
+          <i class="fas fa-chart-line text-3xl text-primary mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">Predictive Engines</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">XGBoost & statistical forecasting models.</p>
+        </div>
+        <div
+          class="p-6 bg-white dark:bg-carddark rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 mt-6">
+          <i class="fas fa-network-wired text-3xl text-secondary mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">GenAI & LLMs</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Designing multi-agent LangGraph workflows.</p>
+        </div>
+        <div
+          class="p-6 bg-white dark:bg-carddark rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 -mt-6">
+          <i class="fas fa-shield-halved text-3xl text-primary mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">Sovereign NLP</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Air-gapped deployment for strict data compliance.</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-carddark rounded-xl shadow-lg border border-gray-100 dark:border-gray-800">
+          <i class="fas fa-server text-3xl text-secondary mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">MLOps & Cloud</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">AWS SageMaker & production scaling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-12 px-6 max-w-6xl mx-auto pdf-page-break-avoid" data-aos="fade-up">
+    <h2 class="font-heading text-3xl font-bold mb-8 text-center">Technical Expertise</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+        <h3 class="font-bold text-lg mb-4 text-primary"><i class="fas fa-code mr-2"></i>Languages</h3>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm font-medium">
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>Python</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>SQL</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>Pydantic / FastAPI</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+        <h3 class="font-bold text-lg mb-4 text-primary"><i class="fas fa-brain mr-2"></i>AI & ML</h3>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm font-medium">
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>LLMs (GPT-4o, Llama-3)</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>LangGraph / RAG</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>XGBoost & Predictive</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>SpaCy / NLP</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+        <h3 class="font-bold text-lg mb-4 text-primary"><i class="fas fa-cogs mr-2"></i>MLOps</h3>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm font-medium">
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>Docker / Kubernetes</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>CI/CD & Git</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>MLflow</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>Model Monitoring</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+        <h3 class="font-bold text-lg mb-4 text-primary"><i class="fas fa-cloud mr-2"></i>Cloud & DB</h3>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm font-medium">
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>AWS SageMaker</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>Neo4j (Graph DB)</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>Vector DBs (FAISS)</li>
+          <li class="flex items-center"><i class="fas fa-check text-secondary mr-2"></i>PostgreSQL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="no-print py-10 bg-gray-100 dark:bg-carddark border-y border-gray-200 dark:border-gray-800 overflow-hidden">
+    <div
+      class="flex items-center space-x-12 animate-scroll font-heading text-lg font-semibold text-gray-500 dark:text-gray-400 whitespace-nowrap px-6">
+      <span>• GPT-4o / Llama-3</span>
+      <span>• LangGraph / CrewAI</span>
+      <span>• Python / FastAPI</span>
+      <span>• GraphRAG (Neo4j)</span>
+      <span>• AWS SageMaker</span>
+      <span>• XGBoost</span>
+      <span>• Solr / Semantic Search</span>
+      <span>• Docker / Kubernetes</span>
+      <span>• GPT-4o / Llama-3</span>
+      <span>• LangGraph / CrewAI</span>
+      <span>• Python / FastAPI</span>
+    </div>
+  </section>
+
+  <section id="architecture" class="py-20 px-6 max-w-6xl mx-auto pdf-page-break-avoid" data-aos="fade-up">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="font-heading text-3xl font-bold mb-4">Architecture & Business Impact</h2>
+      <p class="text-gray-600 dark:text-gray-400">Connecting complex ML workflows to measurable business ROI. Here are
+        high-level views of two core systems I have designed and deployed.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+
+      <div
+        class="bg-white dark:bg-carddark p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col justify-between pdf-page-break-avoid">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-primary">1. Agentic Business Intelligence (BI) Platform</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-6"><strong>The Challenge:</strong> Business leaders were
+            waiting days for ad-hoc reports from engineering teams. I designed an autonomous "Analyst Agent" to
+            democratize data access for non-technical leadership.</p>
+
+          <div
+            class="flex flex-col items-center space-y-3 text-xs font-semibold text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div
+              class="flex items-center justify-center bg-white dark:bg-gray-800 px-4 py-2 rounded-lg border w-full max-w-sm">
+              <i class="fas fa-comment-dots text-primary mr-2"></i> User: "Forecast Q3 Churn"</div>
+            <i class="fas fa-arrow-down text-gray-400"></i>
+            <div
+              class="flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg border border-blue-300 dark:border-blue-700 w-full max-w-sm">
+              <i class="fas fa-network-wired mr-2"></i> LangGraph Orchestrator (Router)</div>
+            <i class="fas fa-arrow-down text-gray-400"></i>
+            <div class="flex justify-between w-full max-w-sm space-x-2">
+              <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-2 rounded-lg border w-1/3"><i
+                  class="fas fa-database text-emerald-500 mb-1"></i>SQL Agent</div>
+              <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-2 rounded-lg border w-1/3"><i
+                  class="fas fa-vector-square text-purple-500 mb-1"></i>FAISS (Vector)</div>
+              <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-2 rounded-lg border w-1/3"><i
+                  class="fas fa-globe text-orange-500 mb-1"></i>Web Search</div>
+            </div>
+            <i class="fas fa-arrow-down text-gray-400"></i>
+            <div
+              class="flex items-center justify-center bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-lg border border-emerald-300 dark:border-emerald-700 w-full max-w-sm">
+              <i class="fas fa-chart-pie mr-2"></i> LLM Synthesis & Executive Report</div>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-3 text-sm">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+            <strong class="text-blue-700 dark:text-blue-400">💡 Insight Learned:</strong> Business leaders trust AI more
+            when it shows its "scratchpad." By enabling the agent to log its sub-queries (e.g., "Writing SQL for table
+            X"), we increased user adoption by 60%.
+          </div>
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg border-l-4 border-emerald-500">
+            <strong class="text-emerald-700 dark:text-emerald-400"><i class="fas fa-chart-line mr-1"></i> Business
+              Value:</strong> Cut executive query time from <strong>4 hours to <30 seconds</strong> and automated 45% of
+                standard BI reporting.
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white dark:bg-carddark p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col justify-between pdf-page-break-avoid">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-primary">2. Semantic Enterprise Discovery Platform</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-6"><strong>The Challenge:</strong> Legacy keyword search
+            ("Ctrl+F") was causing audit bottlenecks. I led the transition to a modern NLP search architecture that
+            understands context and domain-specific enterprise terminology.</p>
+
+          <div
+            class="flex flex-col items-center space-y-3 text-xs font-semibold text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="flex justify-between w-full max-w-sm space-x-2">
+              <div class="flex items-center justify-center bg-white dark:bg-gray-800 px-2 py-2 rounded-lg border w-1/2">
+                <i class="fas fa-file-pdf text-red-500 mr-2"></i> Audit Docs</div>
+              <div class="flex items-center justify-center bg-white dark:bg-gray-800 px-2 py-2 rounded-lg border w-1/2">
+                <i class="fas fa-envelope text-yellow-500 mr-2"></i> Communications</div>
+            </div>
+            <i class="fas fa-arrow-down text-gray-400"></i>
+            <div
+              class="flex items-center justify-center bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-lg border border-blue-300 dark:border-blue-700 w-full max-w-sm">
+              <i class="fas fa-cogs mr-2"></i> NLP Pre-Processing (SpaCy & RegEx)</div>
+            <i class="fas fa-arrow-down text-gray-400"></i>
+            <div
+              class="flex items-center justify-center bg-white dark:bg-gray-800 px-4 py-2 rounded-lg border w-full max-w-sm">
+              <i class="fas fa-wave-square text-purple-500 mr-2"></i> Doc2Vec Embeddings Generation</div>
+            <i class="fas fa-arrow-down text-gray-400"></i>
+            <div
+              class="flex items-center justify-center bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-lg border border-emerald-300 dark:border-emerald-700 w-full max-w-sm">
+              <i class="fas fa-search mr-2"></i> Apache SOLR (Semantic Retrieval)</div>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-3 text-sm">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+            <strong class="text-blue-700 dark:text-blue-400">💡 Insight Learned:</strong> Fine-tuning specialized
+            embedding models (Doc2Vec) on proprietary enterprise data drastically outperformed generic models in
+            capturing highly technical jargon.
+          </div>
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg border-l-4 border-emerald-500">
+            <strong class="text-emerald-700 dark:text-emerald-400"><i class="fas fa-chart-line mr-1"></i> Business
+              Value:</strong> Reduced manual audit verification time by <strong>25%</strong> and improved stakeholder
+            requirement precision by <strong>40%</strong>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience" class="py-20 px-6 max-w-4xl mx-auto">
+    <h2 class="font-heading text-3xl font-bold mb-12 text-center" data-aos="fade-up">Professional Experience</h2>
+
+    <div class="relative pl-8 mb-16 border-l-2 border-primary pdf-page-break-avoid" data-aos="fade-up">
+      <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-2"></div>
+      <div class="bg-white dark:bg-carddark p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
+        <div class="flex flex-col md:flex-row justify-between md:items-center mb-6">
+          <div>
+            <p class="text-primary font-semibold text-lg uppercase tracking-wide">EXL Service</p>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Lead Data Scientist</h3>
+          </div>
+          <span class="text-sm font-medium px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full mt-2 md:mt-0 w-max">Oct
+            2023 – Present</span>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 italic border-l-4 border-secondary pl-3">Leading a team of data
+          scientists to architect scalable "Compound AI Systems," transitioning operations from isolated models to
+          integrated GenAI and predictive workflows.</p>
+        <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+          <li class="flex items-start"><i
+              class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>LangGraph Multi-Tenant SaaS
+                Platform:</strong> Architected a privacy-first extraction and reconciliation platform utilizing
+              LangGraph and NLP. Engineered dynamic Pydantic schema engines to enable self-service client onboarding and
+              strict data isolation across global tenants.</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>LLMOps
+                & Sovereign GenAI Pipelines:</strong> Spearheaded the organizational adoption of Generative AI by
+              deploying standardized LLM-as-a-Judge evaluation pipelines and rigorous PII guardrails (Microsoft
+              Presidio) to ensure secure and compliant delivery cycles.</span></li>
+          <li class="flex items-start"><i
+              class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>Compound Agentic Workflows
+                (SQL+Vector):</strong> Engineered an autonomous "Analyst Agent" combining SQL, Vector Databases, and Web
+              Search (Tavily) via LangGraph to synthesize multi-modal data and automate complex ad-hoc business
+              intelligence reporting.</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>Hybrid
+                GraphRAG Intelligence (Neo4j):</strong> Built a Hybrid Knowledge Graph and Retrieval-Augmented
+              Generation engine combining Neo4j with state-of-the-art LLMs to map multi-hop relational dependencies and
+              uncover hidden vulnerabilities in complex supply chain networks.</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>XGBoost
+                & Quantile Regression Predictive Engine:</strong> Developed a robust Predictive Revenue Assurance Engine
+              utilizing XGBoost and Quantile Regression to forecast cash flow risks and generate probabilistic
+              risk-spreads for proactive financial intervention.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="relative pl-8 border-l-2 border-primary pdf-page-break-avoid" data-aos="fade-up">
+      <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-2"></div>
+      <div class="bg-white dark:bg-carddark p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
+        <div class="flex flex-col md:flex-row justify-between md:items-center mb-6">
+          <div>
+            <p class="text-primary font-semibold text-lg uppercase tracking-wide">Tata Consultancy Services (TCS)</p>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Data Scientist</h3>
+          </div>
+          <span class="text-sm font-medium px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full mt-2 md:mt-0 w-max">July
+            2019 – June 2023</span>
+        </div>
+        <ul class="space-y-4 text-gray-600 dark:text-gray-300">
+          <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>XGBoost
+                Dual-Risk Predictive Engine:</strong> Architected a composite risk intelligence system utilizing
+              ensemble modeling and explainable AI to proactively flag supply chain vulnerabilities by simultaneously
+              analyzing behavioral supplier reliability and historical inventory volatility.</span></li>
+          <li class="flex items-start"><i
+              class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>Sovereign NLP & Air-Gapped
+                Pipelines:</strong> Orchestrated an end-to-end NLP pipeline using advanced topic modeling (BERTopic) and
+              data orchestration tools to autonomously cluster and triage high-risk safety signals while strictly
+              adhering to GDPR/HIPAA privacy regulations.</span></li>
+          <li class="flex items-start"><i
+              class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>Microservice Architecture &
+                Validation:</strong> Championed a Continuous Service Improvement (CSI) strategy by designing a
+              standardized, proactive ML microservice architecture that integrated "Intelligent Defaults" and real-time
+              validation into legacy enterprise applications.</span></li>
+          <li class="flex items-start"><i
+              class="fas fa-check-circle text-secondary mt-1 mr-3"></i><span><strong>Enterprise AI Enablement:</strong>
+              Spearheaded an internal program, architecting interactive dashboards and business-centric runbooks to
+              demystify machine learning concepts for executive leadership and drive cross-functional adoption.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="font-heading text-3xl font-bold mb-8 text-center text-primary">Education</h2>
+    <div class="space-y-6">
+      <div
+        class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm flex items-start space-x-4 pdf-page-break-avoid">
+        <div class="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-lg text-primary">
+          <i class="fas fa-graduation-cap text-2xl"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white">Master of Science in Machine Learning & AI</h3>
+          <p class="text-gray-600 dark:text-gray-400 font-medium">Liverpool John Moores University</p>
+          <span
+            class="inline-block mt-2 text-xs font-semibold px-2 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 rounded">Distinction
+            | Outstanding Achiever</span>
+        </div>
+      </div>
+
+      <div
+        class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm flex items-start space-x-4 pdf-page-break-avoid">
+        <div class="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-lg text-primary">
+          <i class="fas fa-university text-2xl"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white">Post Graduate Diploma in Machine Learning & AI
+          </h3>
+          <p class="text-gray-600 dark:text-gray-400 font-medium">IIIT Bangalore</p>
+          <span
+            class="inline-block mt-2 text-xs font-semibold px-2 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 rounded">GPA:
+            9.05</span>
+        </div>
+      </div>
+
+      <div
+        class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm flex items-start space-x-4 pdf-page-break-avoid">
+        <div class="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-lg text-primary">
+          <i class="fas fa-book text-2xl"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white">Bachelor of Technology in Computer Science</h3>
+          <p class="text-gray-600 dark:text-gray-400 font-medium">Bharati Vidyapeeth's College of Engineering</p>
+          <span
+            class="inline-block mt-2 text-xs font-semibold px-2 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 rounded">GPA:
+            8.31</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards" class="py-16 px-6 max-w-4xl mx-auto pdf-page-break-avoid" data-aos="fade-up">
+    <h2 class="font-heading text-3xl font-bold mb-8 text-center text-primary">Awards & Certifications</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white dark:bg-carddark p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-md">
+        <h3 class="text-xl font-bold mb-6 flex items-center text-gray-900 dark:text-white">
+          <i class="fas fa-trophy text-yellow-500 mr-3"></i> Career Awards
+        </h3>
+        <ul class="space-y-4 text-gray-600 dark:text-gray-300 text-sm">
+          <li><strong class="text-gray-900 dark:text-white text-base">Stellar Performer Award (EXL)</strong><br>Two-time
+            recipient for exceptional leadership and contributions to GenAI solutions.</li>
+          <li><strong class="text-gray-900 dark:text-white text-base">Innovation Champions Award
+              (EXL)</strong><br>Secured for innovative strategic approaches in GenAI.</li>
+          <li><strong class="text-gray-900 dark:text-white text-base">Awards for Excellence & On The Spot
+              (TCS)</strong><br>Conferred for consistent outstanding performance and impactful delivery.</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-carddark p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-md">
+        <h3 class="text-xl font-bold mb-6 flex items-center text-gray-900 dark:text-white">
+          <i class="fas fa-certificate text-secondary mr-3"></i> Certifications
+        </h3>
+        <ul class="space-y-4 text-gray-600 dark:text-gray-300 text-sm">
+          <li><strong class="text-gray-900 dark:text-white text-base">Nvidia LLM Certification</strong><br>Validated
+            expertise in building, training, and deploying large language models.</li>
+          <li><strong class="text-gray-900 dark:text-white text-base">Assembly of Data Scientist
+              MLOps</strong><br>Demonstrated proficiency in end-to-end MLOps practices for scalable machine learning.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="thought-leadership" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="font-heading text-3xl font-bold mb-8 text-center text-primary">Thought Leadership & Research</h2>
+    <div class="space-y-6">
+      <div
+        class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm pdf-page-break-avoid">
+        <span class="text-xs font-bold uppercase tracking-wider text-secondary">NCREEE 19</span>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Assessment of Classification Algorithms
+          using Low-Level Features for MIR</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Evaluated classification algorithms utilizing low-level
+          features for Music Information Retrieval, comparing their performance to text and image-based methods.</p>
+      </div>
+      <div
+        class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm pdf-page-break-avoid">
+        <span class="text-xs font-bold uppercase tracking-wider text-secondary">AICAI'2019</span>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Biclustering Algorithms: Analyzing
+          Statistical Symmetry</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Delved into the analysis and comparison of various
+          Bi-clustering algorithms, focusing on statistical symmetry and interdependencies among multiple features.</p>
+      </div>
+      <div
+        class="bg-white dark:bg-carddark p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm pdf-page-break-avoid">
+        <span class="text-xs font-bold uppercase tracking-wider text-secondary">ICICC , IJARCSSE</span>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2">Intrusion Detection Systems using
+          Artificial Immune System</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Investigated the development of an Intrusion Detection
+          System (IDS) inspired by natural immune systems, utilizing the concept of negative selection.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="next-steps" class="py-20 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <div class="bg-gradient-to-r from-blue-600 to-emerald-500 rounded-3xl p-1 text-center">
+      <div class="bg-white dark:bg-carddark py-16 px-8 rounded-3xl h-full w-full">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Ready to build
+          something together?</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-8">
+          Whether you're looking for technical leadership, exploring a new AI project, or just want to chat about
+          Agentic GenAI—let's connect.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:piyushsukhija01@gmail.com"
+            class="px-8 py-3 rounded-lg bg-primary hover:bg-blue-600 text-white font-medium shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-1 flex items-center">
+            <i class="fas fa-paper-plane mr-2"></i> <span class="no-print-text">Send me an Email</span><span
+              class="print-url">piyushsukhija01@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/piyushsukhija" target="_blank"
+            class="px-8 py-3 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 font-medium transition flex items-center shadow-md transform hover:-translate-y-1 cursor-pointer">
+            <i class="fab fa-linkedin mr-2 text-blue-600"></i> <span class="no-print-text">Connect on
+              LinkedIn</span><span class="print-url">linkedin.com/in/piyushsukhija</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer
+    class="py-12 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-400">
+    <p class="mb-2">© 2026 Piyush Sukhija. Data Scientist.</p>
+    <p><i class="fas fa-map-marker-alt text-red-500 mr-1"></i> Delhi, India</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({ once: true, offset: 50, duration: 800 });
+
+    // Theme Toggle Logic
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlElement = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      htmlElement.classList.add('dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeBtn.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark');
+      if (htmlElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+
+    // ==========================================
+    // FIXED PDF GENERATION LOGIC 
+    // ==========================================
+    document.querySelectorAll('.download-resume-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Show loading state on button
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Generating...';
+
+        // 1. Force strict light mode and clean layout for PDF
+        const wasDark = document.documentElement.classList.contains('dark');
+        document.documentElement.classList.remove('dark');
+        document.body.classList.add('pdf-export'); // Forces AOS to show all sections and hides .no-print
+
+        // 2. Temporarily swap gradient text to solid color for PDF renderer
+        const nameSpan = document.getElementById('name-gradient');
+        nameSpan.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-emerald-500', 'bg-clip-text', 'text-transparent');
+        nameSpan.classList.add('text-blue-600');
+
+        // 3. Configure PDF Options (A4, high quality, clean margins)
+        const opt = {
+          margin: [10, 5, 10, 5],
+          filename: 'Piyush_Sukhija_Resume.pdf',
+          image: { type: 'jpeg', quality: 1.0 },
+          html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // 4. Generate and Restore
+        setTimeout(() => { // Small timeout to ensure DOM repaints and AOS unhides
+          html2pdf().set(opt).from(document.body).save().then(() => {
+            // Restore original state
+            document.body.classList.remove('pdf-export');
+            if (wasDark) document.documentElement.classList.add('dark');
+
+            // Restore Gradient text
+            nameSpan.classList.remove('text-blue-600');
+            nameSpan.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-emerald-500', 'bg-clip-text', 'text-transparent');
+
+            // Restore button text
+            btn.innerHTML = originalText;
+          });
+        }, 300);
+      });
+    });
+  </script>
+</body>
+
+</html>
